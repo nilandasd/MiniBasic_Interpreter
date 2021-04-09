@@ -1,0 +1,8 @@
+# $Id: 11-let.mb,v 1.1 2020-09-06 19:41:54-07 - - $
+# test let
+        let i = 1
+        let j = i + 3
+        let k = 8 * i + 9 / j
+        print "i=", i
+        print "j=", j
+        print "k=", k

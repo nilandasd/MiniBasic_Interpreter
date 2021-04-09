@@ -1,0 +1,5 @@
+# $Id: 13-junk.mb,v 1.2 2021-01-20 12:37:31-08 - - $
+        goto nolabel
+        dim a[10]
+        let a[50] = 3
+        let noarray[5] = a[90]

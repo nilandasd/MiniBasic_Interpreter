@@ -1,0 +1,15 @@
+# $Id: 22-fibonacci.mb,v 1.1 2020-09-06 19:41:54-07 - - $
+# Print out all Fibonacci numbers up to max.
+        let max = 10^5
+
+        let fib0 = 0
+        let fib1 = 1
+        print "fib(", 0, ")=", fib0
+        print "fib(", 1, ")=", fib1
+        let i=1
+loop:   let fib = fib0 + fib1
+        let i=i+1
+        print "fib(", i, ")=", fib
+        let fib0 = fib1
+        let fib1 = fib
+        if fib <= max goto loop

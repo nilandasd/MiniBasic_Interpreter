@@ -1,0 +1,20 @@
+# $Id: 31-collatz.mb,v 1.2 2020-10-12 20:41:40-07 - - $
+# Trace the cycles of the Collatz conjecture.
+# http://en.wikipedia.org/wiki/Collatz_conjecture
+# C:    while(n>1)n=n&1?3*n+1:n/2;
+# APL:  L:->Lxi1<N<-((|_N/2),3xN+1)[1=2|N]
+
+        input n
+        let i = 0
+while:  print i, ": ", n
+        if n <= 1 goto done
+
+        let i = i + 1
+        let f = floor (n / 2)
+        if n != f * 2 goto odd
+        let n = f
+        goto while
+odd:    let n = n * 3 + 1
+        goto while
+
+done:

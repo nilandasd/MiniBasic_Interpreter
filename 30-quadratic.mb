@@ -1,0 +1,11 @@
+# $Id: 30-quadratic.mb,v 1.3 2021-01-17 20:45:37-08 - - $
+        print "Quadratic Equation solver."
+loop:   print "Input a, b, c:"
+        input a, b, c
+        if eof > 0 goto stop
+        let q = sqrt (b ^ 2 - 4 * a * c)
+        print "Equation: ", a, " * x ^ 2 +", b, " * x +", c
+        print "root1 = ", (- b + q) / (2 * a)
+        print "root2 = ", (- b - q) / (2 * a)
+        goto loop
+stop:

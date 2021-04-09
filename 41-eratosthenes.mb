@@ -1,0 +1,24 @@
+# $Id: 41-eratosthenes.mb,v 1.1 2020-09-06 19:41:54-07 - - $
+        let n = 100
+        dim sieve[n]
+
+# Assume all numbers in the sieve are prime
+
+        let i = 2
+init:   let sieve[i] = 1
+        let i = i + 1
+        if i < n goto init
+
+# Find primes and punch out their multiples.
+
+        let prime = 2
+primes: if sieve[prime] = 0 goto next
+        print prime
+        let i = prime * 2
+        goto punch
+loop:   let sieve[i] = 0
+        let i = i + prime
+punch:  if i < n goto loop
+
+next:   let prime = prime + 1
+        if prime < n goto primes
